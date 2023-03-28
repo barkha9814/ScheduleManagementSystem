@@ -1,0 +1,440 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Schedule Management API",
+    "description": "Schedule Meeting API documentation",
+    "version": "1.0.2"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/api/v1/users/add-user": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Endpoint for creating new user",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/user"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/api/v1/users/get-all-users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "Endpoint for fetching all users",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/users/{userId}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "Endpoint for fetching a user by ID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "Endpoint for Updating a user by ID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/updateUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "description": "Endpoint for deleting a user by ID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/room/add-room": {
+      "post": {
+        "tags": [
+          "Rooms"
+        ],
+        "description": "Endpoint for creating new room",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/room"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/api/v1/room/get-all-rooms": {
+      "get": {
+        "tags": [
+          "Rooms"
+        ],
+        "description": "Endpoint for fetching all rooms",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/room/{roomId}": {
+      "get": {
+        "tags": [
+          "Rooms"
+        ],
+        "description": "Endpoint for fetching a room by ID",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rooms"
+        ],
+        "description": "Endpoint for Updating a room by ID",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/updateRoom"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rooms"
+        ],
+        "description": "Endpoint for deleting a room by ID",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/schedule/create-meeting": {
+      "post": {
+        "tags": [
+          "Meeting"
+        ],
+        "description": "Endpoint for creating new meeting",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "roomId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/schedule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/v1/schedule/get-meetings/user": {
+      "get": {
+        "tags": [
+          "Meeting"
+        ],
+        "description": "Endpoint for fetching all meetings by UserID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "roomId",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/v1/schedule/get-meetings/room": {
+      "get": {
+        "tags": [
+          "Meeting"
+        ],
+        "description": "Endpoint for fetching all meetings by RoomID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "roomId",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "schedule": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "example": "U6"
+        },
+        "roomId": {
+          "type": "string",
+          "example": "R4"
+        },
+        "guestUsers": {
+          "type": "array",
+          "example": [
+            "U2",
+            "U4"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "meetingDate": {
+          "type": "string",
+          "example": "2022-04-25"
+        },
+        "startTime": {
+          "type": "string",
+          "example": "12:30"
+        },
+        "endTime": {
+          "type": "string",
+          "example": "12:35"
+        }
+      },
+      "required": [
+        "userId",
+        "roomId",
+        "meetingDate",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "example": "yash"
+        },
+        "userName": {
+          "type": "string",
+          "example": "Yash"
+        },
+        "userEmail": {
+          "type": "string",
+          "example": "yash@growthpal.com"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "updateUser": {
+      "type": "object",
+      "properties": {
+        "userName": {
+          "type": "string",
+          "example": "Yash"
+        },
+        "userEmail": {
+          "type": "string",
+          "example": "yash@growthpal.com"
+        }
+      }
+    },
+    "room": {
+      "type": "object",
+      "properties": {
+        "roomId": {
+          "type": "string",
+          "example": "R1"
+        },
+        "roomName": {
+          "type": "string",
+          "example": "Main Conference Room"
+        }
+      },
+      "required": [
+        "roomId"
+      ]
+    },
+    "updateRoom": {
+      "type": "object",
+      "properties": {
+        "roomName": {
+          "type": "string",
+          "example": "Main Room"
+        }
+      }
+    }
+  }
+}

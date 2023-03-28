@@ -1,0 +1,23 @@
+{
+  "name": "schedule-management-system",
+  "version": "1.0.2",
+  "description": "This is a the backend for schedule management system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "swagger-autogen": "node docs/swagger-autogen.js"
+  },
+  "bugs": {
+    "url": "https://github.com/growthpal/fe-assignment/issues"
+  },
+  "homepage": "https://github.com/growthpal/fe-assignment#readme",
+  "author": "GrowthPal Technologies",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.1",
+    "swagger-autogen": "^2.21.1",
+    "swagger-ui-express": "^4.3.0"
+  }
+}
