@@ -7,6 +7,8 @@ import User from './pages/user/userPage';
 import Room from './pages/room/roomPage';
 import AddUser from './components/addUser/addUser';
 import UpdateUser from './components/updateUser/UpdateUser';
+import AddRoom from './components/addRoom/AddRoom';
+import UpdateRoom from './components/updateRoom/UpdateRoom';
 
 function App() {
     return (
@@ -18,6 +20,8 @@ function App() {
                     <Route path='/user/adduser' element={<AddUser />} />
                     <Route path='/user/updateuser' element={<UpdateUser />} />
                     <Route path='/room' element={<Room />} />
+                    <Route path='/room/addroom' element={<AddRoom />} />
+                    <Route path='/room/updateroom' element={<UpdateRoom />} />
                 </Route>
             </Routes>
         </BrowserRouter>

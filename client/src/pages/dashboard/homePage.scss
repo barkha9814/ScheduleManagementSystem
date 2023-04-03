@@ -1,4 +1,19 @@
+.divWrapper{
+    display: flex;
+    gap: 1;
+}
+
 .userDiv{
+    background: #e8e5e5;
+    width: 10rem;
+    height: 7rem;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    margin-right: 2rem;
+}
+
+.roomDiv{
     background: #e8e5e5;
     width: 10rem;
     height: 7rem;
