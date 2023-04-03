@@ -17,7 +17,7 @@ const sidebarNavItems = [
     },
     {
         display: 'Room',
-        icon: <i class='bx bxs-cube'></i>,
+        icon: <i className='bx bxs-cube'></i>,
         to: '/room',
         section: 'room'
     },

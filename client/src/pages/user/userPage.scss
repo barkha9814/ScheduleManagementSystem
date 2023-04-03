@@ -1,0 +1,33 @@
+.tableHeading{
+    background-color: #9d89e5;
+    padding: .5rem;
+}
+
+.tableData{
+    padding: 15px;
+    border-bottom: solid 1px gray;
+    background: #ffffff;
+}
+
+
+.AddBtn{
+    background-color: rgb(28, 192, 28);
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.deleteBtn{
+    background-color: rgb(212, 11, 11);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.updateBtn{
+    background-color: rgb(235, 202, 15);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}

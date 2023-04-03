@@ -1,9 +1,9 @@
 import React from 'react'
 
-function roompage() {
+function roomPage() {
   return (
     <div>Room Page</div>
   )
 }
 
-export default roompage
+export default roomPage
